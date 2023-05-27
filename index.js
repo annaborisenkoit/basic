@@ -118,11 +118,8 @@ function getMonthByNumber(monthNumber) {
 
 // Задание 5️⃣
 // Напишите функцию convertRub(valueRub, currency), которая конвертирует рубли в другие валюты. Функция принимает число в рублях и валюту для перевода строкой ('USD, 'EUR', 'KZT', 'AED'). Функция возвращает результат конвертации. Для решения задачи можно применить конструкцию switch-case (just google it).
-
-const resultOfConversion = convertRub(100, 'USD');
-
-console.log(resultOfConversion);
-
+const valueRub = 10000;
+const currency = 'AED';
 const RUB_USD_CURRENSY_RATE = 0.016;
 const RUB_EUR_CURRENSY_RATE = 0.012;
 const RUB_KZT_CURRENSY_RATE = 5.57;
@@ -130,22 +127,23 @@ const RUB_AED_CURRENSY_RATE = 0.046;
 
 function convertRub(valueRub, currency) {
   switch ((valueRub, currency)) {
-    case 1:
-      `${valueRub * RUB_USD_CURRENSY_RATE}${'currency'}`;
+    case 'USD':
+      console.log(`${valueRub * RUB_USD_CURRENSY_RATE} ${currency}`);
       break;
-    case 2:
-      `${valueRub * RUB_EUR_CURRENSY_RATE}${'currency'}`;
+    case 'EUR':
+      console.log(`${valueRub * RUB_EUR_CURRENSY_RATE} ${currency}`);
       break;
-    case 3:
-      `${valueRub * RUB_KZT_CURRENSY_RATE}${'currency'}`;
+    case 'KZT':
+      console.log(`${valueRub * RUB_KZT_CURRENSY_RATE} ${currency}`);
       break;
-    case 4:
-      `${valueRub * RUB_AED_CURRENSY_RATE}${'currency'}`;
+    case 'AED':
+      console.log(`${valueRub * RUB_AED_CURRENSY_RATE} ${currency}`);
       break;
 
     default:
-      valueRub, (currency = 'неизвестная валюта');
+      console.log('Неизвестная валюта');
       break;
   }
-  return valueRub, currency;
 }
+
+convertRub(valueRub, currency);
